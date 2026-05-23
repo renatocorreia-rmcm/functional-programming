@@ -12,9 +12,9 @@ Study of functional programming paradigm algorithms and tools in Haskell.
 - [ ] Polymorphic Functions
 - [ ] Type Classes
 - [ ] Functions as Values
-  - [ ] Mapping
+  - [x] Mapping
   - [ ] Reduction
-  - [ ] Filtering
+  - [x] Filtering
 - [ ] Composition and Lambdas
 - [ ] Partial Function Application
 - [ ] Algebraic Data Types

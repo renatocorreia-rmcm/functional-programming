@@ -37,15 +37,47 @@ sq_sum :: Int -> Int -> Int
 sq_sum a b = a*a + b*b
 
 
+
 {-
-    BASIC TYPES
+    HIGHER ORDER FUNCTIONS
 -}
 
-x :: Int
-x = -2
+apply_twice :: (a->a) -> a -> a
+apply_twice f a = (f (f a))
 
-y :: Float
-y = 3.14
+twoxp1 :: Int -> Int
+twoxp1 x = (axpy 2 x 1)
+    where axpy a x y = (a*x+y)
 
-z :: Bool
-z = inside 1 (-2) 3
+twoxp1_twice :: Int -> Int
+twoxp1_twice x = (apply_twice twoxp1 x)
+
+
+-- MAP
+
+primes :: [Int]
+primes = 2:3:5:7:11:13:[]
+
+twoxp1_primes :: [Int]
+twoxp1_primes = (map twoxp1 primes)
+
+
+-- FILTER
+
+bound_list :: Int -> Int -> [Int] -> [Int]
+bound_list min max list = (filter (\x -> min<=x && x<=max) list)
+
+
+
+
+{-
+    ANONYMOUS FUNCTION
+-}
+
+axpy_primes :: Int -> Int ->  [Int]
+axpy_primes a y = (map (\x -> a*x+y) primes)
+
+
+{-
+    PARTIAL FUNCTION APPLICATION
+-}
