@@ -79,5 +79,35 @@ axpy_primes a y = (map (\x -> a*x+y) primes)
 
 
 {-
-    PARTIAL FUNCTION APPLICATION
+    CURRYING
 -}
+
+-- all functions had its signature written as taking a value and returning another function
+-- f -> a -> b -> c
+-- f ->(a->(b->c))
+
+add :: Int -> Int -> Int
+-- add x y = x + y
+-- add x = (\y -> x+y)
+add = (\x -> (\y -> x+y))
+
+-- PARTIAL FUNCTION APPLICATION
+
+increment = add 1 
+squareList = map (\x -> x*x) 
+
+
+
+
+{-
+    COMPOSITION
+-}
+
+square :: Int -> Int
+square = (\x -> x*x)
+
+triple :: Int -> Int
+triple = (\x -> 3*x)
+
+squared_triple :: Int -> Int
+squared_triple = (square.triple)

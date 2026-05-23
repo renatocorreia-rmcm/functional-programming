@@ -15,8 +15,8 @@ Study of functional programming paradigm algorithms and tools in Haskell.
   - [x] Mapping
   - [ ] Reduction
   - [x] Filtering
-- [ ] Composition and Lambdas
-- [ ] Partial Function Application
+- [x] Composition and Lambdas
+- [X] Partial Function Application
 - [ ] Algebraic Data Types
 - [ ] Laziness
 - [ ] Input and Output
