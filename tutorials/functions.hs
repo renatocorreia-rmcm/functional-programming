@@ -111,3 +111,4 @@ triple = (\x -> 3*x)
 
 squared_triple :: Int -> Int
 squared_triple = (square.triple)
+-- squared triple x = squared $ triple x  -- equivalent to  squared (triple x)

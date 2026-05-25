@@ -56,3 +56,16 @@ prime_and_odd = [(x,y) | x <- primes, y <- odds]
 my_sum :: [Int] -> Int
 my_sum [] = 0
 my_sum (x:xs) = x + my_sum xs
+
+
+{-
+    FOLDING
+-}
+
+-- foldr op acc xs = (x1 op (... op (xn op acc)))
+-- foldl acc op xs = (((acc op x1) op ...) op xn)
+
+sum_primes :: Int
+sum_primes = foldr (+) 0 primes
+
+
